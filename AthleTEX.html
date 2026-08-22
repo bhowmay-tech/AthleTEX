@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AthleTEX — Where athletes find their game.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="AthleTEX.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="bg-vignette"></div>
+<div class="grain"></div>
+
+<!-- ===================== INTRO SEQUENCE ===================== -->
+<div id="intro">
+  <div class="intro-wipe" id="intro-wipe" aria-hidden="true"></div>
+  <div class="hud-grid" aria-hidden="true"></div>
+
+  <!-- 0 The Athlete -->
+  <div class="intro-scene active sport-athlete" data-scene="0">
+    <div class="hud-corners"></div>
+    <p class="sport-label">AthleTEX // Initializing</p>
+    <div class="telemetry"><span>SYSTEM STATUS: ACTIVE</span><span class="ok">GRID LOCK</span><span>ATHLETE PORTAL</span></div>
+    <div class="sport-stage athlete-stage"></div>
+    <div class="brand-title" style="font-family: var(--display); font-size: clamp(28px, 4vw, 48px); font-weight: 700; margin-bottom: 12px; background: linear-gradient(100deg, var(--cyan), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.01em;">ATHLETEX</div>
+    <h2>Every athlete dreams of the <em>perfect play.</em></h2>
+    <p class="tag" style="margin-top: 14px; font-size: clamp(14px, 1.6vw, 17px); color: var(--ink-dim); max-width: 520px; line-height: 1.5;">The futuristic network for athletes, teams, games, and sports communities.</p>
+    <div class="landing-actions" style="margin-top: 28px; z-index: 10; position: relative;">
+      <button class="btn btn-primary btn-sm" onclick="quickEnterApp()">ENTER ATHLETEX →</button>
+    </div>
+  </div>
+
+  <!-- 1 Cricket -->
+  <div class="intro-scene sport-cricket" data-scene="1">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Cricket · Stadium Scan</p>
+    <div class="telemetry"><span>SPIN 1420 RPM</span><span class="ok">TARGET LOCK</span><span>SEAM 7.2°</span></div>
+    <div class="sport-stage cricket-stage"></div>
+    <h2>The right <em>teammate.</em></h2>
+  </div>
+
+  <!-- 2 Football -->
+  <div class="intro-scene sport-football" data-scene="2">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Football · Pitch Dynamics</p>
+    <div class="telemetry"><span>BALL SPEED 31.4 KM/H</span><span class="ok">STRIKE ANGLE 18°</span><span>TRAJECTORY LOCKED</span></div>
+    <div class="sport-stage football-stage"></div>
+    <h2>The right <em>formation.</em></h2>
+  </div>
+
+  <!-- 3 Badminton -->
+  <div class="intro-scene sport-badminton" data-scene="3">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Badminton · Court Mesh</p>
+    <div class="telemetry"><span>RACKET SPEED 182 KM/H</span><span class="ok">IMPACT ANGLE 14°</span><span>REACTION 0.21 SEC</span></div>
+    <div class="sport-stage badminton-stage"></div>
+    <h2>The right <em>opponent.</em></h2>
+  </div>
+
+  <!-- 4 Swimming -->
+  <div class="intro-scene sport-swimming" data-scene="4">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Swimming · Lane Telemetry</p>
+    <div class="telemetry"><span>HR 148 BPM</span><span class="ok">STREAMLINE</span><span>DEPTH 1.8M</span></div>
+    <div class="sport-stage swim-stage"></div>
+    <h2>The right <em>lane partner.</em></h2>
+  </div>
+
+  <!-- 5 Running -->
+  <div class="intro-scene sport-running" data-scene="5">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Running // Biometric Scan</p>
+    <div class="telemetry"><span>PACE 3:21/KM</span><span class="ok">STRIDE 1.42M</span><span>POWER 812W</span></div>
+    <div class="sport-stage running-stage"></div>
+    <h2>The right <em>pace.</em></h2>
+  </div>
+
+  <!-- 6 Chess -->
+  <div class="intro-scene sport-chess" data-scene="6">
+    <div class="hud-corners"></div>
+    <p class="sport-label">Chess · Strategy Grid</p>
+    <div class="telemetry"><span>AI ANALYSIS</span><span class="ok">BEST MOVE FOUND</span><span>EVALUATION +2.8</span></div>
+    <div class="sport-stage chess-stage"></div>
+    <h2>The right <em>strategy.</em></h2>
+  </div>
+
+  <!-- 7 AthleTEX Network -->
+  <div class="intro-scene sport-network" data-scene="7">
+    <div class="hud-corners"></div>
+    <p class="sport-label">AthleTEX · Athlete Network</p>
+    <div class="telemetry"><span>CONNECTIVITY 100%</span><span class="ok">SYNC ACTIVE</span><span>NODES 24,801</span></div>
+    <div class="sport-stage network-stage"></div>
+    <h2>Find your <em>game.</em></h2>
+    <p class="tag" style="font-size:16px; margin-top:10px; color:var(--ink-dim)">Discover. Connect. Compete. Improve.</p>
+  </div>
+
+  <!-- 8 Finale -->
+  <div class="intro-scene sport-final" data-scene="8">
+    <div class="hud-corners"></div>
+    <p class="sport-label">AthleTEX · Identity Locked</p>
+    <div class="telemetry"><span>PLAYER MATCH ACTIVE</span><span class="ok">READY TO PLAY</span><span>VERSION 2.0</span></div>
+    <div class="sport-stage final-stage"></div>
+    <h1 style="font-size:clamp(40px,8vw,90px); margin-bottom: 20px;">ATHLETEX</h1>
+    <p style="font-size:clamp(16px,2vw,22px); color:var(--ink-dim); max-width:600px; margin: 0 auto 30px; font-family:var(--body);">Where athletes find their game.</p>
+    <div class="landing-actions" style="margin-top:20px; z-index:10; position:relative;">
+      <button class="btn btn-primary" onclick="enterApp()">ENTER ATHLETEX →</button>
+      <button class="btn btn-secondary" onclick="enterApp('discover')">EXPLORE THE PLATFORM</button>
+    </div>
+  </div>
+
+  <div class="intro-dots" id="intro-dots"></div>
+  <button id="intro-skip">Skip intro</button>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app">
+
+
+
+  <!-- WORKSPACE -->
+  <div id="workspace">
+    <aside class="sidenav">
+      <div class="brand">
+        <svg class="ring-mini" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="url(#g2)" stroke-width="2.4"/><defs><linearGradient id="g2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#2F6BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs></svg>
+        AthleTEX
+      </div>
+      <div class="nav-list" id="nav-list"></div>
+      <div class="sidenav-foot" onclick="go('profile')">
+        <div class="avatar">DR</div>
+        <div class="who"><b>Darshini Reddy</b><span>Verified Athlete</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="searchbar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="global-search" placeholder="Search athletes, sports, teams, events…" oninput="handleGlobalSearch(this.value)">
+          <kbd style="font-family: var(--mono); font-size: 11px; padding: 2px 6px; background: rgba(9, 14, 25, 0.7); border: 1px solid var(--border); border-radius: 4px; color: var(--ink-faint); pointer-events: none;">/</kbd>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" onclick="go('notifications')" title="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="dot-flag"></span>
+          </button>
+          <button class="icon-btn" onclick="go('messages')" title="Messages">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <div id="search-results" class="card" style="display:none;position:absolute;top:70px;right:220px;left:auto;width:340px;z-index:40;"></div>
+        </div>
+      </div>
+
+      <!-- ============ HOME ============ -->
+      <section class="page active" id="page-home">
+        <!-- Panoramic Hero Banner -->
+        <div class="card" style="padding: 0; min-height: 280px; margin-bottom: 24px; position: relative;">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;">
+          <div style="position: absolute; inset: 0; z-index: 2; background: linear-gradient(90deg, #04060b 35%, rgba(4,6,11,0.6) 70%, transparent 100%);"></div>
+          <div style="position: relative; z-index: 3; padding: 40px; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <div class="eyebrow" style="color: var(--cyan); margin-bottom: 8px;">AthleTEX Hub</div>
+            <h2 style="font-size: clamp(26px, 3.5vw, 42px); line-height: 1.1; margin-bottom: 12px; font-weight: 700;">YOUR <span class="text-gradient-cyan">GAME.</span> YOUR <span class="text-gradient-pink">PEOPLE.</span><br>YOUR <span class="text-gradient-lime">MOMENT.</span></h2>
+            <p style="color: var(--ink-dim); max-width: 500px; font-size: 14.5px; margin-bottom: 24px; font-family: var(--body);">Connect with local athletes, discover active teams, coordinate competitive matches, and track your performance gains.</p>
+            <div class="landing-actions" style="justify-content: flex-start; margin-top: 0; gap: 12px;">
+              <button class="btn btn-primary btn-sm" onclick="go('discover')">EXPLORE ATHLETES</button>
+              <button class="btn btn-secondary btn-sm" onclick="go('play')">EXPLORE EVENTS</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Score Widget -->
+        <div style="margin-bottom: 28px;">
+          <div class="section-head" style="margin-bottom: 12px;">
+            <h3 style="font-size: 18px; font-family: var(--body); font-weight: 700; display: flex; align-items: center; gap: 8px;">
+              <span class="live-badge" style="padding: 3px 10px;"><span class="pulse-dot"></span>LIVE SCORES</span>
+            </h3>
+          </div>
+          <div class="scroll-row">
+            <div class="live-card">
+              <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
+              <div style="position: relative; z-index: 2;">
+                <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-cricket); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
+                  <span>🏏 CRICKET · HYD PREMIER</span>
+                  <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <b style="font-size: 15px;">IND vs AUS</b>
+                  <span class="mono" style="font-size: 16px; color: var(--gold); font-weight: 700;">142/4</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
+                  <span>Overs 32.4 (RR 4.34)</span>
+                  <span>Gachibowli Stadium</span>
+                </div>
+              </div>
+            </div>
+            <div class="live-card">
+              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
+              <div style="position: relative; z-index: 2;">
+                <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-football); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
+                  <span>⚽ FOOTBALL · KUKATPALLY CUP</span>
+                  <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <b style="font-size: 15px;">HYD STRIKERS vs BFC</b>
+                  <span class="mono" style="font-size: 16px; color: var(--cyan); font-weight: 700;">2 - 1</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
+                  <span>Min 74' (Strikers Lead)</span>
+                  <span>Kukatpally Turf Arena</span>
+                </div>
+              </div>
+            </div>
+            <div class="live-card">
+              <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
+              <div style="position: relative; z-index: 2;">
+                <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-badminton); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
+                  <span>🏸 BADMINTON · OPEN DOUBLES</span>
+                  <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <b style="font-size: 15px;">SNEHA / PRIYA vs TEAM-X</b>
+                  <span class="mono" style="font-size: 16px; color: var(--purple); font-weight: 700;">21-18, 14-11</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
+                  <span>Set 2 (Match point imminent)</span>
+                  <span>Kukatpalli Arena</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sport Discovery Tiles -->
+        <div style="margin-bottom: 28px;">
+          <div class="card-title"><h3 style="font-size: 18px; font-family: var(--body); font-weight: 700;">Explore Your Sport</h3></div>
+          <div class="scroll-row">
+            <div class="sport-tile" onclick="setDiscoverFilter('Cricket'); go('discover')">
+              <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=300&q=80">
+              <div class="overlay"></div>
+              <div class="tile-content">
+                <span class="pill" style="color: var(--accent-cricket); border-color: var(--accent-cricket); margin-bottom: 8px; display: inline-block;">🏏 CRICKET</span>
+                <h4>Cricket</h4>
+                <p>24.8K Athletes · 12 Live Matches</p>
+              </div>
+            </div>
+            <div class="sport-tile" onclick="setDiscoverFilter('Football'); go('discover')">
+              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80">
+              <div class="overlay"></div>
+              <div class="tile-content">
+                <span class="pill" style="color: var(--accent-football); border-color: var(--accent-football); margin-bottom: 8px; display: inline-block;">⚽ FOOTBALL</span>
+                <h4>Football</h4>
+                <p>38.2K Athletes · 8 Live Matches</p>
+              </div>
+            </div>
+            <div class="sport-tile" onclick="setDiscoverFilter('Badminton'); go('discover')">
+              <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=300&q=80">
+              <div class="overlay"></div>
+              <div class="tile-content">
+                <span class="pill" style="color: var(--accent-badminton); border-color: var(--accent-badminton); margin-bottom: 8px; display: inline-block;">🏸 BADMINTON</span>
+                <h4>Badminton</h4>
+                <p>12.4K Athletes · 5 Live Matches</p>
+              </div>
+            </div>
+            <div class="sport-tile" onclick="setDiscoverFilter('Basketball'); go('discover')">
+              <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=300&q=80">
+              <div class="overlay"></div>
+              <div class="tile-content">
+                <span class="pill" style="color: var(--accent-basketball); border-color: var(--accent-basketball); margin-bottom: 8px; display: inline-block;">🏀 BASKETBALL</span>
+                <h4>Basketball</h4>
+                <p>18.7K Athletes · 6 Live Matches</p>
+              </div>
+            </div>
+            <div class="sport-tile" onclick="setDiscoverFilter('Tennis'); go('discover')">
+              <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=300&q=80">
+              <div class="overlay"></div>
+              <div class="tile-content">
+                <span class="pill" style="color: var(--accent-tennis); border-color: var(--accent-tennis); margin-bottom: 8px; display: inline-block;">🎾 TENNIS</span>
+                <h4>Tennis</h4>
+                <p>9.8K Athletes · 4 Live Matches</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-dash">
+          <div class="stack">
+            <div class="card">
+              <div class="card-title"><h3>Nearby Matches</h3><a onclick="go('play')">See all</a></div>
+              <div class="stack" id="home-matches"></div>
+            </div>
+            <div class="card">
+              <div class="card-title"><h3>Upcoming Events</h3><a onclick="go('play')">See all</a></div>
+              <div class="stack" id="home-events"></div>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="card">
+              <div class="card-title"><h3>Players you should meet</h3><a onclick="go('discover')">View all</a></div>
+              <div class="stack" id="home-suggestions"></div>
+            </div>
+            <div class="card">
+              <div class="card-title"><h3>🏏 Local Leaderboard — Kukatpally</h3><a onclick="go('leaderboards')">Full board</a></div>
+              <div class="stack" id="home-leaderboard"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MY ATHLETE / PROFILE ============ -->
+      <section class="page" id="page-profile">
+        <div class="profile-hero">
+          <div class="avatar">DR</div>
+          <div class="id" style="flex:1;min-width:220px;">
+            <h2>Darshini Reddy <svg class="verified-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></h2>
+            <p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Kukatpally, Hyderabad · Age 24</p>
+            <div class="sports-tags">
+              <span class="pill">🏏 Cricket</span><span class="pill">⚽ Football</span><span class="pill">🏸 Badminton</span>
+              <span class="pill live">🟢 Available this weekend</span>
+            </div>
+          </div>
+          <div class="ring-wrap">
+            <svg class="ring-svg" width="108" height="108" viewBox="0 0 108 108">
+              <circle class="ring-track" cx="54" cy="54" r="46"/>
+              <circle class="ring-fill" cx="54" cy="54" r="46" stroke="url(#gring)" stroke-width="8" stroke-dasharray="289" stroke-dashoffset="289" data-target="94"/>
+              <defs><linearGradient id="gring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2F6BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+            </svg>
+            <div class="ring-center"><b class="mono" style="font-size:24px">94</b><span>Score</span></div>
+          </div>
+        </div>
+
+        <div class="tab-row" id="profile-tabs">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="sports">Sports</button>
+          <button class="tab-btn" data-tab="performance">Performance</button>
+          <button class="tab-btn" data-tab="achievements">Achievements</button>
+          <button class="tab-btn" data-tab="availability">Availability</button>
+          <button class="tab-btn" data-tab="about">About</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-overview">
+          <div class="grid-dash">
+            <div class="card">
+              <div class="card-title"><h3>Athlete Score Breakdown</h3></div>
+              <div class="stack" id="score-breakdown"></div>
+            </div>
+            <div class="card">
+              <div class="card-title"><h3>Profile Completion</h3></div>
+              <div style="height:10px;border-radius:100px;background:var(--panel-strong);overflow:hidden;">
+                <div style="height:100%;width:92%;background:linear-gradient(90deg,var(--blue),var(--cyan));"></div>
+              </div>
+              <p style="margin-top:10px;color:var(--ink-dim);font-size:12.5px;">92% complete — add a certification to reach 100%.</p>
+              <button class="btn btn-secondary btn-sm" style="margin-top:14px;" onclick="openModal('modal-edit-profile')">Edit Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-sports">
+          <div class="sport-selector" id="sport-selector"></div>
+          <div class="grid-4" id="sport-stats"></div>
+          <button class="btn btn-ghost" style="margin-top:18px;" onclick="openModal('modal-add-sport')">+ Add Sport</button>
+        </div>
+
+        <div class="tab-panel" id="tab-performance">
+          <div class="card">
+            <div class="card-title"><h3>Performance Trend — <span id="perf-sport-label">Cricket</span></h3></div>
+            <canvas id="perf-chart" height="140"></canvas>
+          </div>
+          <div class="insight-box" style="margin-top:16px;"><b>AI Insight —</b> Your batting consistency improved by 14% over the last 6 matches. Second-half stamina remains the biggest lever for your next rank jump.</div>
+        </div>
+
+        <div class="tab-panel" id="tab-achievements">
+          <div class="achv-grid" id="achv-grid"></div>
+        </div>
+
+        <div class="tab-panel" id="tab-availability">
+          <div class="card">
+            <div class="card-title"><h3>Weekly Availability</h3></div>
+            <div class="avail-grid" id="avail-grid"></div>
+            <p style="margin-top:14px;font-size:12px;color:var(--ink-faint);">Tap a day to toggle availability. This feeds directly into AI Player Matching.</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-about">
+          <div class="card">
+            <div class="card-title"><h3>About Arjun</h3></div>
+            <p style="color:var(--ink-dim);font-size:13.5px;line-height:1.7;">All-rounder cricketer and weekend footballer from Kukatpally. Playing competitively for 8 years, currently ranked #1 in the local intermediate cricket circuit. Looking for badminton doubles partners for the Kukatpalli Open.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DISCOVER ============ -->
+      <section class="page" id="page-discover">
+        <div class="section-head">
+          <div><h2>Discover Athletes</h2><p>Find teammates, opponents and coaches near you.</p></div>
+          <button class="btn btn-primary btn-sm" onclick="openModal('modal-ai-match')">🤖 AI Player Match</button>
+        </div>
+        <div class="filter-bar" id="discover-filters"></div>
+        <div class="athlete-grid" id="discover-grid"></div>
+      </section>
+
+      <!-- ============ PLAY & EVENTS ============ -->
+      <section class="page" id="page-play">
+        <div class="section-head">
+          <div><h2>Play &amp; Events</h2><p>Matches, teams and tournaments happening around Hyderabad.</p></div>
+          <div style="display:flex;gap:10px;">
+            <button class="btn btn-secondary btn-sm" onclick="openModal('modal-create-event')">Create Event</button>
+            <button class="btn btn-primary btn-sm" onclick="openModal('modal-create-match')">Create Match</button>
+          </div>
+        </div>
+        <div class="tab-row" id="play-tabs">
+          <button class="tab-btn active" data-ptab="matches">Matches</button>
+          <button class="tab-btn" data-ptab="events">Events</button>
+          <button class="tab-btn" data-ptab="teams">Teams</button>
+          <button class="tab-btn" data-ptab="coaches">Coaches</button>
+        </div>
+        <div class="tab-panel active" id="ptab-matches"><div class="athlete-grid" id="matches-grid"></div></div>
+        <div class="tab-panel" id="ptab-events"><div class="athlete-grid" id="events-grid"></div></div>
+        <div class="tab-panel" id="ptab-teams"><div class="athlete-grid" id="teams-grid"></div></div>
+        <div class="tab-panel" id="ptab-coaches"><div class="athlete-grid" id="coaches-grid"></div></div>
+      </section>
+
+      <!-- ============ AI COACH ============ -->
+      <section class="page" id="page-coach">
+        <div class="section-head">
+          <div><h2>Your AI Coach</h2><p>Train smarter. Understand your performance. Improve faster.</p></div>
+          <button class="btn btn-primary btn-sm" onclick="generatePlan()">Generate New Training Plan</button>
+        </div>
+        <div class="card" style="margin-bottom:18px;">
+          <div class="ai-summary">
+            <div class="ring-wrap">
+              <svg class="ring-svg" width="96" height="96" viewBox="0 0 96 96">
+                <circle class="ring-track" cx="48" cy="48" r="40"/>
+                <circle class="ring-fill" cx="48" cy="48" r="40" stroke="url(#gring2)" stroke-width="7" stroke-dasharray="251" stroke-dashoffset="251" data-target="87"/>
+                <defs><linearGradient id="gring2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A6FF4D"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+              </svg>
+              <div class="ring-center"><b class="mono" style="font-size:20px">87</b><span>/100</span></div>
+            </div>
+            <div style="flex:1;min-width:220px;">
+              <div style="display:flex;gap:26px;flex-wrap:wrap;">
+                <div><div class="eyebrow" style="color:var(--lime)">Strengths</div><p style="font-size:13.5px;margin-top:6px;">Consistency · Speed · Match awareness</p></div>
+                <div><div class="eyebrow" style="color:var(--danger)">Needs improvement</div><p style="font-size:13.5px;margin-top:6px;">Endurance · Reaction time</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:18px;">
+          <div class="card-title"><h3>This Week's Training Plan</h3></div>
+          <div class="plan-week" id="plan-week"></div>
+        </div>
+        <div class="insight-box" id="ai-recommendation">Your recent matches show a 12% drop in second-half performance. Add two endurance sessions this week.</div>
+      </section>
+
+      <!-- ============ LEADERBOARDS ============ -->
+      <section class="page" id="page-leaderboards">
+        <div class="section-head"><div><h2>Local Champions</h2><p>Rankings never mix unrelated sport statistics — each sport has its own methodology.</p></div></div>
+        <div class="filter-bar" id="lb-filters"></div>
+        <div class="card">
+          <div id="lb-list"></div>
+        </div>
+      </section>
+
+      <!-- ============ MESSAGES ============ -->
+      <section class="page" id="page-messages">
+        <div class="section-head"><div><h2>Messages</h2><p>Chat with teammates and opponents.</p></div></div>
+        <div class="chat-shell">
+          <div class="conv-list" id="conv-list"></div>
+          <div class="chat-window">
+            <div class="chat-header">
+              <div class="avatar" id="chat-avatar">RS</div>
+              <div><b id="chat-name" style="font-size:14px;">Rahul Sharma</b><div style="font-size:11px;color:var(--lime);">Online</div></div>
+            </div>
+            <div class="chat-body" id="chat-body"></div>
+            <div class="chat-input">
+              <input id="chat-text" placeholder="Type a message…" onkeydown="if(event.key==='Enter')sendChat()">
+              <button class="btn btn-primary btn-sm" onclick="sendChat()">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NOTIFICATIONS ============ -->
+      <section class="page" id="page-notifications">
+        <div class="section-head"><div><h2>Notifications</h2><p>Stay on top of your sports world.</p></div><button class="btn btn-ghost btn-sm" onclick="clearNotifs()">Mark all read</button></div>
+        <div class="card"><div class="stack" id="notif-list"></div></div>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="page" id="page-settings">
+        <div class="section-head"><div><h2>Settings</h2><p>Manage your account, profile and preferences.</p></div></div>
+        <div class="settings-grid">
+          <div class="settings-nav" id="settings-nav">
+            <button class="active" data-s="account">Account</button>
+            <button data-s="privacy">Privacy</button>
+            <button data-s="notifications">Notifications</button>
+            <button data-s="ai">AI Preferences</button>
+            <button data-s="appearance">Appearance</button>
+            <button data-s="security">Security</button>
+          </div>
+          <div class="card">
+            <div id="settings-panel"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Bottom nav (mobile) -->
+<div class="bottom-nav" id="bottom-nav"></div>
+
+<!-- ===================== MODALS ===================== -->
+<div class="modal-overlay" id="modal-edit-profile">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Edit Profile</h3><button class="modal-close" onclick="closeModal('modal-edit-profile')">✕</button></div>
+    <div class="field"><label>Full name</label><input value="Arjun Reddy"></div>
+    <div class="field-row">
+      <div class="field"><label>City</label><input value="Kukatpally"></div>
+      <div class="field"><label>Age</label><input value="24" type="number"></div>
+    </div>
+    <div class="field"><label>Bio</label><textarea>All-rounder cricketer and weekend footballer.</textarea></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeModal('modal-edit-profile');toast('Profile updated','✓')">Save Changes</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-add-sport">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Add a Sport</h3><button class="modal-close" onclick="closeModal('modal-add-sport')">✕</button></div>
+    <div class="field"><label>Sport</label><select id="add-sport-select"><option>Swimming</option><option>Athletics</option><option>Chess</option><option>Football</option><option>Badminton</option></select></div>
+    <div class="field"><label>Skill level</label><select><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="addSport()">Add Sport</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-create-match">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Create Match</h3><button class="modal-close" onclick="closeModal('modal-create-match')">✕</button></div>
+    <div class="field-row">
+      <div class="field"><label>Sport</label><select id="cm-sport"><option>Cricket</option><option>Football</option><option>Badminton</option></select></div>
+      <div class="field"><label>Skill level</label><select id="cm-skill"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+    </div>
+    <div class="field"><label>Match name</label><input id="cm-name" placeholder="e.g. Sunday Turf Cricket"></div>
+    <div class="field-row">
+      <div class="field"><label>Date</label><input id="cm-date" type="date"></div>
+      <div class="field"><label>Time</label><input id="cm-time" type="time"></div>
+    </div>
+    <div class="field"><label>Location</label><input id="cm-loc" placeholder="e.g. Kukatpally Turf Ground"></div>
+    <div class="field"><label>Max players</label><input id="cm-max" type="number" value="11"></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="createMatch()">Create Match</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-create-event">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Create Event</h3><button class="modal-close" onclick="closeModal('modal-create-event')">✕</button></div>
+    <div class="field"><label>Event name</label><input id="ce-name" placeholder="e.g. Gachibowli Winter Cup"></div>
+    <div class="field-row">
+      <div class="field"><label>Sport</label><select id="ce-sport"><option>Badminton</option><option>Cricket</option><option>Football</option></select></div>
+      <div class="field"><label>Date</label><input id="ce-date" type="date"></div>
+    </div>
+    <div class="field"><label>Venue</label><input id="ce-venue" placeholder="e.g. Kukatpalli Indoor Arena"></div>
+    <div class="field"><label>Prize pool (₹)</label><input id="ce-prize" type="number" value="25000"></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="createEvent()">Create Event</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-ai-match">
+  <div class="modal-box" style="max-width:560px;">
+    <div class="modal-head"><h3>🤖 AI Player Match</h3><button class="modal-close" onclick="closeModal('modal-ai-match')">✕</button></div>
+    <p style="color:var(--ink-dim);font-size:13px;margin-bottom:16px;">Find the players who fit your game.</p>
+    <div class="field-row">
+      <div class="field"><label>Sport</label><select id="aim-sport"><option>Cricket</option><option>Football</option><option>Badminton</option></select></div>
+      <div class="field"><label>Skill</label><select id="aim-skill"><option>Intermediate</option><option>Beginner</option><option>Advanced</option></select></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Location radius</label><select><option>Within 5 km</option><option selected>Within 10 km</option><option>Within 20 km</option></select></div>
+      <div class="field"><label>Day</label><select><option>Sunday</option><option>Saturday</option><option>Weekday evening</option></select></div>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="runAiMatch()">Find Best Matches</button>
+    <div id="aim-results" class="stack" style="margin-top:18px;"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-verify">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Verify Your Athlete Profile</h3><button class="modal-close" onclick="closeModal('modal-verify')">✕</button></div>
+    <div class="field"><label>Identity document</label><input type="file"></div>
+    <div class="field"><label>Competition certificate</label><input type="file"></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeModal('modal-verify');toast('Verification submitted — pending review','⏳')">Submit for Verification</button>
+  </div>
+</div>
+
+<div id="toast-wrap"></div>
+
+<script src="AthleTEX.js"></script>
+</body>
+</html>
