@@ -1,0 +1,15 @@
+.vercel
+.env
+backend/.env
+backend/venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.db
+.pytest_cache/
+.idea/
+.vscode/
+node_modules/
+.DS_Store
+

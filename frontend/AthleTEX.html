@@ -25,8 +25,6 @@
   <!-- 0 The Athlete -->
   <div class="intro-scene active sport-athlete" data-scene="0">
     <div class="hud-corners"></div>
-    <p class="sport-label">AthleTEX // Initializing</p>
-    <div class="telemetry"><span>SYSTEM STATUS: ACTIVE</span><span class="ok">GRID LOCK</span><span>ATHLETE PORTAL</span></div>
     <div class="sport-stage athlete-stage"></div>
     <div class="brand-title" style="font-family: var(--display); font-size: clamp(28px, 4vw, 48px); font-weight: 700; margin-bottom: 12px; background: linear-gradient(100deg, var(--cyan), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.01em;">ATHLETEX</div>
     <h2>Every athlete dreams of the <em>perfect play.</em></h2>
@@ -39,8 +37,6 @@
   <!-- 1 Cricket -->
   <div class="intro-scene sport-cricket" data-scene="1">
     <div class="hud-corners"></div>
-    <p class="sport-label">Cricket · Stadium Scan</p>
-    <div class="telemetry"><span>SPIN 1420 RPM</span><span class="ok">TARGET LOCK</span><span>SEAM 7.2°</span></div>
     <div class="sport-stage cricket-stage"></div>
     <h2>The right <em>teammate.</em></h2>
   </div>
@@ -48,8 +44,6 @@
   <!-- 2 Football -->
   <div class="intro-scene sport-football" data-scene="2">
     <div class="hud-corners"></div>
-    <p class="sport-label">Football · Pitch Dynamics</p>
-    <div class="telemetry"><span>BALL SPEED 31.4 KM/H</span><span class="ok">STRIKE ANGLE 18°</span><span>TRAJECTORY LOCKED</span></div>
     <div class="sport-stage football-stage"></div>
     <h2>The right <em>formation.</em></h2>
   </div>
@@ -57,8 +51,6 @@
   <!-- 3 Badminton -->
   <div class="intro-scene sport-badminton" data-scene="3">
     <div class="hud-corners"></div>
-    <p class="sport-label">Badminton · Court Mesh</p>
-    <div class="telemetry"><span>RACKET SPEED 182 KM/H</span><span class="ok">IMPACT ANGLE 14°</span><span>REACTION 0.21 SEC</span></div>
     <div class="sport-stage badminton-stage"></div>
     <h2>The right <em>opponent.</em></h2>
   </div>
@@ -66,8 +58,6 @@
   <!-- 4 Swimming -->
   <div class="intro-scene sport-swimming" data-scene="4">
     <div class="hud-corners"></div>
-    <p class="sport-label">Swimming · Lane Telemetry</p>
-    <div class="telemetry"><span>HR 148 BPM</span><span class="ok">STREAMLINE</span><span>DEPTH 1.8M</span></div>
     <div class="sport-stage swim-stage"></div>
     <h2>The right <em>lane partner.</em></h2>
   </div>
@@ -75,8 +65,6 @@
   <!-- 5 Running -->
   <div class="intro-scene sport-running" data-scene="5">
     <div class="hud-corners"></div>
-    <p class="sport-label">Running // Biometric Scan</p>
-    <div class="telemetry"><span>PACE 3:21/KM</span><span class="ok">STRIDE 1.42M</span><span>POWER 812W</span></div>
     <div class="sport-stage running-stage"></div>
     <h2>The right <em>pace.</em></h2>
   </div>
@@ -84,8 +72,6 @@
   <!-- 6 Chess -->
   <div class="intro-scene sport-chess" data-scene="6">
     <div class="hud-corners"></div>
-    <p class="sport-label">Chess · Strategy Grid</p>
-    <div class="telemetry"><span>AI ANALYSIS</span><span class="ok">BEST MOVE FOUND</span><span>EVALUATION +2.8</span></div>
     <div class="sport-stage chess-stage"></div>
     <h2>The right <em>strategy.</em></h2>
   </div>
@@ -93,8 +79,6 @@
   <!-- 7 AthleTEX Network -->
   <div class="intro-scene sport-network" data-scene="7">
     <div class="hud-corners"></div>
-    <p class="sport-label">AthleTEX · Athlete Network</p>
-    <div class="telemetry"><span>CONNECTIVITY 100%</span><span class="ok">SYNC ACTIVE</span><span>NODES 24,801</span></div>
     <div class="sport-stage network-stage"></div>
     <h2>Find your <em>game.</em></h2>
     <p class="tag" style="font-size:16px; margin-top:10px; color:var(--ink-dim)">Discover. Connect. Compete. Improve.</p>
@@ -103,8 +87,6 @@
   <!-- 8 Finale -->
   <div class="intro-scene sport-final" data-scene="8">
     <div class="hud-corners"></div>
-    <p class="sport-label">AthleTEX · Identity Locked</p>
-    <div class="telemetry"><span>PLAYER MATCH ACTIVE</span><span class="ok">READY TO PLAY</span><span>VERSION 2.0</span></div>
     <div class="sport-stage final-stage"></div>
     <h1 style="font-size:clamp(40px,8vw,90px); margin-bottom: 20px;">ATHLETEX</h1>
     <p style="font-size:clamp(16px,2vw,22px); color:var(--ink-dim); max-width:600px; margin: 0 auto 30px; font-family:var(--body);">Where athletes find their game.</p>
@@ -121,24 +103,25 @@
 <!-- ===================== APP ===================== -->
 <div id="app">
 
-
-
   <!-- WORKSPACE -->
   <div id="workspace">
     <aside class="sidenav">
       <div class="brand">
-        <svg class="ring-mini" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="url(#g2)" stroke-width="2.4"/><defs><linearGradient id="g2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#2F6BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs></svg>
+        <svg class="ring-mini" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="url(#g2)" stroke-width="2.4"/><defs><linearGradient id="g2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="var(--blue)"/><stop offset="1" stop-color="var(--cyan)"/></linearGradient></defs></svg>
         AthleTEX
       </div>
       <div class="nav-list" id="nav-list"></div>
       <div class="sidenav-foot" onclick="go('profile')">
-        <div class="avatar">DR</div>
-        <div class="who"><b>Darshini Reddy</b><span>Verified Athlete</span></div>
+        <div class="avatar" id="sidebar-avatar">AT</div>
+        <div class="who"><b id="sidebar-user-name">Athlete Profile</b><span id="sidebar-user-role">Verified Athlete</span></div>
       </div>
     </aside>
 
     <main class="main">
       <div class="topbar">
+        <button class="icon-btn back-btn" id="topbar-back-btn" onclick="goBack()" title="Back" aria-label="Go Back" style="display:none; margin-right: 8px; flex-shrink:0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
         <div class="searchbar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
           <input id="global-search" placeholder="Search athletes, sports, teams, events…" oninput="handleGlobalSearch(this.value)">
@@ -160,7 +143,7 @@
       <section class="page active" id="page-home">
         <!-- Panoramic Hero Banner -->
         <div class="card" style="padding: 0; min-height: 280px; margin-bottom: 24px; position: relative;">
-          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;">
+          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 1;">
           <div style="position: absolute; inset: 0; z-index: 2; background: linear-gradient(90deg, #04060b 35%, rgba(4,6,11,0.6) 70%, transparent 100%);"></div>
           <div style="position: relative; z-index: 3; padding: 40px; display: flex; flex-direction: column; justify-content: center; height: 100%;">
             <div class="eyebrow" style="color: var(--cyan); margin-bottom: 8px;">AthleTEX Hub</div>
@@ -180,55 +163,79 @@
               <span class="live-badge" style="padding: 3px 10px;"><span class="pulse-dot"></span>LIVE SCORES</span>
             </h3>
           </div>
-          <div class="scroll-row">
-            <div class="live-card">
+          <div class="scroll-row" id="home-live-scores-row">
+            <!-- Dynamic Live Scores populated via WebSocket / REST -->
+            <div class="live-card" onclick="window.open('https://www.google.com/search?q=India+vs+England+ODI+live+score+2026', '_blank')" style="cursor:pointer;" title="View live score on Google">
               <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
               <div style="position: relative; z-index: 2;">
                 <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-cricket); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
-                  <span>🏏 CRICKET · HYD PREMIER</span>
+                  <span>🏏 CRICKET · 3rd ODI</span>
                   <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
                 </div>
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                  <b style="font-size: 15px;">IND vs AUS</b>
-                  <span class="mono" style="font-size: 16px; color: var(--gold); font-weight: 700;">142/4</span>
+                  <b style="font-size: 15px;">IND vs ENG</b>
+                  <span class="mono" style="font-size: 16px; color: var(--gold); font-weight: 700;">287/6</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
-                  <span>Overs 32.4 (RR 4.34)</span>
-                  <span>Gachibowli Stadium</span>
+                  <span>Overs 45.2 · RR 6.32 · ENG 241</span>
+                  <span>Wankhede, Mumbai</span>
                 </div>
               </div>
             </div>
-            <div class="live-card">
-              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
+
+            <!-- Football: EPL Arsenal vs Man City -->
+            <div class="live-card" onclick="window.open('https://www.google.com/search?q=Arsenal+vs+Manchester+City+Premier+League+live+score', '_blank')" style="cursor:pointer;" title="View live score on Google">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
               <div style="position: relative; z-index: 2;">
                 <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-football); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
-                  <span>⚽ FOOTBALL · KUKATPALLY CUP</span>
+                  <span>⚽ EPL · GW1 2026/27</span>
                   <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
                 </div>
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                  <b style="font-size: 15px;">HYD STRIKERS vs BFC</b>
-                  <span class="mono" style="font-size: 16px; color: var(--cyan); font-weight: 700;">2 - 1</span>
+                  <b style="font-size: 15px;">ARS vs MCI</b>
+                  <span class="mono" style="font-size: 16px; color: var(--cyan); font-weight: 700;">1 - 1</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
-                  <span>Min 74' (Strikers Lead)</span>
-                  <span>Kukatpally Turf Arena</span>
+                  <span>Min 67' (HT: 1-0)</span>
+                  <span>Emirates Stadium, London</span>
                 </div>
               </div>
             </div>
-            <div class="live-card">
+
+            <!-- Badminton: BWF World Championships 2026 -->
+            <div class="live-card" onclick="window.open('https://www.google.com/search?q=BWF+World+Championships+2026+live+score', '_blank')" style="cursor:pointer;" title="View live score on Google">
               <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
               <div style="position: relative; z-index: 2;">
                 <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-badminton); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
-                  <span>🏸 BADMINTON · OPEN DOUBLES</span>
+                  <span>🏸 BWF WORLDS · QF</span>
                   <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
                 </div>
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                  <b style="font-size: 15px;">SNEHA / PRIYA vs TEAM-X</b>
-                  <span class="mono" style="font-size: 16px; color: var(--purple); font-weight: 700;">21-18, 14-11</span>
+                  <b style="font-size: 15px;">LAKSHYA SEN vs AXELSEN</b>
+                  <span class="mono" style="font-size: 16px; color: var(--purple); font-weight: 700;">21-18, 14-16</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
-                  <span>Set 2 (Match point imminent)</span>
-                  <span>Kukatpalli Arena</span>
+                  <span>Game 3 in progress · MS QF</span>
+                  <span>Jakarta, Indonesia</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tennis: US Open 2026 -->
+            <div class="live-card" onclick="window.open('https://www.google.com/search?q=US+Open+2026+tennis+live+score', '_blank')" style="cursor:pointer;" title="View live score on Google">
+              <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=300&q=80" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 1; border-radius: var(--radius-md);">
+              <div style="position: relative; z-index: 2;">
+                <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: var(--accent-tennis); font-family: var(--mono); font-weight: 700; margin-bottom: 8px;">
+                  <span>🎾 US OPEN 2026 · R4</span>
+                  <span class="live-badge"><span class="pulse-dot"></span>LIVE</span>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <b style="font-size: 15px;">ALCARAZ vs SINNER</b>
+                  <span class="mono" style="font-size: 16px; color: var(--lime); font-weight: 700;">6-4, 4-6, 3-2*</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-dim);">
+                  <span>Set 3 in progress · Alcaraz leads</span>
+                  <span>Arthur Ashe Stadium</span>
                 </div>
               </div>
             </div>
@@ -249,7 +256,7 @@
               </div>
             </div>
             <div class="sport-tile" onclick="setDiscoverFilter('Football'); go('discover')">
-              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=300&q=80">
               <div class="overlay"></div>
               <div class="tile-content">
                 <span class="pill" style="color: var(--accent-football); border-color: var(--accent-football); margin-bottom: 8px; display: inline-block;">⚽ FOOTBALL</span>
@@ -313,7 +320,8 @@
 
       <!-- ============ MY ATHLETE / PROFILE ============ -->
       <section class="page" id="page-profile">
-        <div class="profile-hero">
+        <div id="profile-content">
+          <div class="profile-hero">
           <div class="avatar">DR</div>
           <div class="id" style="flex:1;min-width:220px;">
             <h2>Darshini Reddy <svg class="verified-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></h2>
@@ -327,7 +335,7 @@
             <svg class="ring-svg" width="108" height="108" viewBox="0 0 108 108">
               <circle class="ring-track" cx="54" cy="54" r="46"/>
               <circle class="ring-fill" cx="54" cy="54" r="46" stroke="url(#gring)" stroke-width="8" stroke-dasharray="289" stroke-dashoffset="289" data-target="94"/>
-              <defs><linearGradient id="gring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2F6BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+              <defs><linearGradient id="gring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--blue)"/><stop offset="1" stop-color="var(--cyan)"/></linearGradient></defs>
             </svg>
             <div class="ring-center"><b class="mono" style="font-size:24px">94</b><span>Score</span></div>
           </div>
@@ -387,8 +395,8 @@
 
         <div class="tab-panel" id="tab-about">
           <div class="card">
-            <div class="card-title"><h3>About Arjun</h3></div>
-            <p style="color:var(--ink-dim);font-size:13.5px;line-height:1.7;">All-rounder cricketer and weekend footballer from Kukatpally. Playing competitively for 8 years, currently ranked #1 in the local intermediate cricket circuit. Looking for badminton doubles partners for the Kukatpalli Open.</p>
+            <div class="card-title"><h3>About Darshini</h3></div>
+            <p style="color:var(--ink-dim);font-size:13.5px;line-height:1.7;">Batting specialist and badminton enthusiast from Kukatpally. Playing competitively for 7 years, currently ranked #1 in the local advanced cricket circuit. Pursuing doubles partners for the Kukatpalli Open 2026.</p>
           </div>
         </div>
       </section>
@@ -409,16 +417,19 @@
           <div><h2>Play &amp; Events</h2><p>Matches, teams and tournaments happening around Hyderabad.</p></div>
           <div style="display:flex;gap:10px;">
             <button class="btn btn-secondary btn-sm" onclick="openModal('modal-create-event')">Create Event</button>
+            <button class="btn btn-secondary btn-sm" onclick="openModal('modal-create-tournament')">Create Tournament</button>
             <button class="btn btn-primary btn-sm" onclick="openModal('modal-create-match')">Create Match</button>
           </div>
         </div>
         <div class="tab-row" id="play-tabs">
           <button class="tab-btn active" data-ptab="matches">Matches</button>
+          <button class="tab-btn" data-ptab="tournaments">Tournaments</button>
           <button class="tab-btn" data-ptab="events">Events</button>
           <button class="tab-btn" data-ptab="teams">Teams</button>
           <button class="tab-btn" data-ptab="coaches">Coaches</button>
         </div>
         <div class="tab-panel active" id="ptab-matches"><div class="athlete-grid" id="matches-grid"></div></div>
+        <div class="tab-panel" id="ptab-tournaments"><div class="athlete-grid" id="tournaments-grid"></div></div>
         <div class="tab-panel" id="ptab-events"><div class="athlete-grid" id="events-grid"></div></div>
         <div class="tab-panel" id="ptab-teams"><div class="athlete-grid" id="teams-grid"></div></div>
         <div class="tab-panel" id="ptab-coaches"><div class="athlete-grid" id="coaches-grid"></div></div>
@@ -427,8 +438,8 @@
       <!-- ============ AI COACH ============ -->
       <section class="page" id="page-coach">
         <div class="section-head">
-          <div><h2>Your AI Coach</h2><p>Train smarter. Understand your performance. Improve faster.</p></div>
-          <button class="btn btn-primary btn-sm" onclick="generatePlan()">Generate New Training Plan</button>
+          <div><h2>Your AI Coach</h2><p>Powered by Groq, Gemini &amp; Ollama &middot; Real-time training, tactics, nutrition &amp; recovery.</p></div>
+          <button class="btn btn-primary btn-sm" onclick="generateAIPlan()">&#9889; Generate Training Plan</button>
         </div>
         <div class="card" style="margin-bottom:18px;">
           <div class="ai-summary">
@@ -436,7 +447,7 @@
               <svg class="ring-svg" width="96" height="96" viewBox="0 0 96 96">
                 <circle class="ring-track" cx="48" cy="48" r="40"/>
                 <circle class="ring-fill" cx="48" cy="48" r="40" stroke="url(#gring2)" stroke-width="7" stroke-dasharray="251" stroke-dashoffset="251" data-target="87"/>
-                <defs><linearGradient id="gring2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A6FF4D"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+                <defs><linearGradient id="gring2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--lime)"/><stop offset="1" stop-color="var(--cyan)"/></linearGradient></defs>
               </svg>
               <div class="ring-center"><b class="mono" style="font-size:20px">87</b><span>/100</span></div>
             </div>
@@ -453,6 +464,48 @@
           <div class="plan-week" id="plan-week"></div>
         </div>
         <div class="insight-box" id="ai-recommendation">Your recent matches show a 12% drop in second-half performance. Add two endurance sessions this week.</div>
+
+        <!-- AI Coach Chat Box -->
+        <div class="card" style="margin-bottom:18px;display:flex;flex-direction:column;gap:0;">
+          <div class="card-title" style="margin-bottom:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <h3 style="display:flex;align-items:center;gap:8px;">
+              <span style="background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;">⚡ AthleTEX AI Coach</span>
+            </h3>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <label class="eyebrow" style="color:var(--ink-dim);margin:0;">Engine:</label>
+              <select id="ai-engine-select" onchange="setAIEngine(this.value)" style="background:var(--panel-strong);border:1px solid var(--border-soft);color:var(--ink);padding:4px 10px;border-radius:var(--radius-sm);font-size:12px;cursor:pointer;">
+                <option value="groq">⚡ Groq (Llama 3.3 70B - Ultra Fast)</option>
+                <option value="gemini">✦ Google Gemini 2.0 Flash</option>
+                <option value="ollama">🦙 Ollama (Local AI - 100% Private &amp; Offline)</option>
+              </select>
+              <span class="live-badge" style="padding:2px 8px;font-size:10px;"><span class="pulse-dot"></span>ACTIVE</span>
+            </div>
+          </div>
+          <!-- Quick prompt chips -->
+          <div style="display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 10px;">
+            <button class="btn btn-secondary btn-sm" onclick="sendAIQuick('Give me a 5-day cricket training plan for improving batting consistency')">&#127994; Batting Plan</button>
+            <button class="btn btn-secondary btn-sm" onclick="sendAIQuick('What are the best recovery exercises after a football match?')">&#9917; Recovery Tips</button>
+            <button class="btn btn-secondary btn-sm" onclick="sendAIQuick('How can I improve my endurance for badminton matches?')">&#127992; Endurance</button>
+            <button class="btn btn-secondary btn-sm" onclick="sendAIQuick('What nutrition should I follow on match day?')">&#129367; Match Day Diet</button>
+            <button class="btn btn-secondary btn-sm" onclick="sendAIQuick('Suggest a warm-up routine for an athlete before a big game')">&#128293; Warm-up</button>
+          </div>
+          <!-- Chat messages window -->
+          <div id="ai-chat-window" style="min-height:260px;max-height:380px;overflow-y:auto;background:var(--panel-strong);border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--border-soft);">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⚡</div>
+              <div style="background:var(--panel);border:1px solid var(--border-soft);border-radius:0 var(--radius-md) var(--radius-md) var(--radius-md);padding:12px 14px;font-size:13.5px;line-height:1.6;max-width:90%;">
+                Hey! I'm your AthleTEX AI Coach 🏆 powered by <strong>Groq Llama 3.3</strong> &amp; <strong>Google Gemini</strong>.<br>Ask me anything about your <strong>training plan</strong>, <strong>match tactics</strong>, <strong>sports nutrition</strong>, <strong>injury recovery</strong>, or <strong>daily fitness goals</strong>!
+              </div>
+            </div>
+          </div>
+          <!-- Input area -->
+          <div style="display:flex;gap:10px;margin-top:12px;">
+            <input id="ai-input" type="text" placeholder="Ask your AI coach anything&hellip; e.g. 'How do I increase my sprint speed?'" style="flex:1;" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAIMessage();}">
+            <button class="btn btn-primary" onclick="sendAIMessage()" id="ai-send-btn" style="flex-shrink:0;padding:0 18px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </div>
       </section>
 
       <!-- ============ LEADERBOARDS ============ -->
@@ -516,15 +569,138 @@
 
 <!-- ===================== MODALS ===================== -->
 <div class="modal-overlay" id="modal-edit-profile">
-  <div class="modal-box">
-    <div class="modal-head"><h3>Edit Profile</h3><button class="modal-close" onclick="closeModal('modal-edit-profile')">✕</button></div>
-    <div class="field"><label>Full name</label><input value="Arjun Reddy"></div>
-    <div class="field-row">
-      <div class="field"><label>City</label><input value="Kukatpally"></div>
-      <div class="field"><label>Age</label><input value="24" type="number"></div>
+  <div class="modal-box" style="max-width: 680px; max-height: 85vh; display: flex; flex-direction: column;">
+    <div class="modal-head">
+      <div>
+        <h3 style="margin:0;">Edit AthleTEX Profile</h3>
+        <p style="margin:2px 0 0 0; font-size: 12px; color: var(--ink-dim);">Update your sports, fitness, goals, equipment and availability preferences.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-edit-profile')">✕</button>
     </div>
-    <div class="field"><label>Bio</label><textarea>All-rounder cricketer and weekend footballer.</textarea></div>
-    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeModal('modal-edit-profile');toast('Profile updated','✓')">Save Changes</button>
+    
+    <div class="tab-row" id="edit-profile-tabs" style="margin: 12px 0; font-size: 12px;">
+      <button class="tab-btn active" onclick="switchEditTab('basic')">Basic</button>
+      <button class="tab-btn" onclick="switchEditTab('sports')">Sports</button>
+      <button class="tab-btn" onclick="switchEditTab('fitness')">Fitness</button>
+      <button class="tab-btn" onclick="switchEditTab('training')">Training</button>
+      <button class="tab-btn" onclick="switchEditTab('avail')">Availability</button>
+      <button class="tab-btn" onclick="switchEditTab('certificates')">Certificates</button>
+      <button class="tab-btn" onclick="switchEditTab('goals')">Goals</button>
+    </div>
+
+    <div id="edit-profile-body" style="flex:1; overflow-y: auto; padding: 4px 2px 14px 2px;">
+      <!-- Tab 1: Basic -->
+      <div class="edit-tab-panel active" id="edit-panel-basic">
+        <div class="field"><label>Full Name</label><input id="edit-name" value="Darshini Reddy"></div>
+        <div class="field-row">
+          <div class="field"><label>City</label><input id="edit-city" value="Hyderabad"></div>
+          <div class="field"><label>Area / Locality</label><input id="edit-area" value="Kukatpally"></div>
+        </div>
+        <div class="field"><label>Bio</label><textarea id="edit-bio" rows="3">Batting specialist and badminton enthusiast from Kukatpally.</textarea></div>
+      </div>
+
+      <!-- Tab 2: Sports -->
+      <div class="edit-tab-panel" id="edit-panel-sports" style="display:none;">
+        <div class="field">
+          <label>Primary Sport</label>
+          <select id="edit-primary-sport">
+            <option>Cricket</option><option>Football</option><option>Basketball</option><option>Badminton</option>
+            <option>Tennis</option><option>Swimming</option><option>Athletics</option><option>Volleyball</option>
+            <option>Table Tennis</option><option>Chess</option><option>Boxing</option><option>Wrestling</option>
+            <option>Weightlifting</option><option>Cycling</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Skill Level</label>
+            <select id="edit-skill-level">
+              <option>Beginner</option><option selected>Intermediate</option><option>Advanced</option><option>Professional</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Playing Frequency</label>
+            <select id="edit-frequency">
+              <option>Never</option><option>Occasionally</option><option>1–2 times per week</option>
+              <option selected>3–4 times per week</option><option>5+ times per week</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Sports Played (comma-separated)</label><input id="edit-sports-played" value="Cricket, Badminton, Football"></div>
+      </div>
+
+      <!-- Tab 3: Fitness -->
+      <div class="edit-tab-panel" id="edit-panel-fitness" style="display:none;">
+        <div class="field-row">
+          <div class="field">
+            <label>Fitness Level</label>
+            <select id="edit-fitness-level">
+              <option>Beginner</option><option>Moderate</option><option selected>Good</option><option>Advanced</option><option>Elite</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Exercise Days / Week</label>
+            <select id="edit-exercise-days">
+              <option>0</option><option>1–2</option><option selected>3–4</option><option>5–6</option><option>Every day</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Session Duration</label>
+          <select id="edit-session-duration">
+            <option>Less than 30 minutes</option><option>30–60 minutes</option><option selected>60–90 minutes</option><option>90+ minutes</option>
+          </select>
+        </div>
+        <div class="field"><label>Fitness Goals (comma-separated)</label><input id="edit-fitness-goals" value="Build strength, Improve sports performance"></div>
+      </div>
+
+      <!-- Tab 4: Training & Equipment -->
+      <div class="edit-tab-panel" id="edit-panel-training" style="display:none;">
+        <div class="field-row">
+          <div class="field">
+            <label>Preferred Training Time</label>
+            <select id="edit-preferred-time">
+              <option>Early morning</option><option>Morning</option><option>Afternoon</option><option selected>Evening</option><option>Night</option><option>Flexible</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Weekly Hours</label>
+            <select id="edit-weekly-hours">
+              <option>Less than 2</option><option>2–4</option><option selected>4–7</option><option>7–10</option><option>10+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Training Locations (comma-separated)</label><input id="edit-train-locations" value="Gym, Outdoor, Local ground/court"></div>
+        <div class="field"><label>Equipment Access (comma-separated)</label><input id="edit-equipment" value="Gym equipment, Cricket ground, Dumbbells"></div>
+      </div>
+
+      <!-- Tab 5: Availability -->
+      <div class="edit-tab-panel" id="edit-panel-avail" style="display:none;">
+        <div class="field"><label>Available Days (comma-separated)</label><input id="edit-avail-days" value="Saturday, Sunday"></div>
+      </div>
+
+      <!-- Tab 6: Certificates -->
+      <div class="edit-tab-panel" id="edit-panel-certificates" style="display:none;">
+        <div class="field">
+          <label for="edit-certificates">Upload sports certificates</label>
+          <input id="edit-certificates" type="file" accept="application/pdf,image/jpeg,image/png,image/webp" multiple onchange="previewCertificates(this)">
+          <small style="display:block;margin-top:8px;color:var(--ink-faint);">PDF, JPG, PNG or WEBP. Maximum 10 MB per file.</small>
+        </div>
+        <div id="certificate-file-list" class="certificate-file-list">
+          <span style="color:var(--ink-faint);">No certificates selected.</span>
+        </div>
+      </div>
+
+      <!-- Tab 7: Goals -->
+      <div class="edit-tab-panel" id="edit-panel-goals" style="display:none;">
+        <div class="field"><label>Biggest Sports Goals (comma-separated)</label><input id="edit-sports-goals" value="Join a team, Participate in tournaments, Improve ranking"></div>
+        <div class="field"><label>ATHLETEX Help Preferences (comma-separated)</label><input id="edit-help-topics" value="Match discovery, Tournament discovery, Training recommendations"></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-soft); display: flex; justify-content: flex-end; gap: 10px;">
+      <button class="btn btn-secondary" onclick="closeModal('modal-edit-profile')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveProfileEdits()">Save Profile Changes</button>
+    </div>
   </div>
 </div>
 
@@ -569,6 +745,35 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="modal-create-tournament">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Create Tournament</h3><button class="modal-close" onclick="closeModal('modal-create-tournament')">✕</button></div>
+    <div class="field"><label>Tournament Name</label><input id="ct-name" placeholder="e.g. Hyderabad Winter Cup"></div>
+    <div class="field-row">
+      <div class="field"><label>Sport</label><select id="ct-sport"><option>Badminton</option><option>Cricket</option><option>Football</option></select></div>
+      <div class="field"><label>Max Participants</label><select id="ct-max"><option value="4">4 Players</option><option value="8">8 Players</option><option value="16" selected>16 Players</option></select></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Location</label><input id="ct-loc" value="Kukatpally"></div>
+      <div class="field"><label>Venue</label><input id="ct-venue" placeholder="e.g. Kukatpalli Indoor Arena"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Reg Start Date</label><input id="ct-reg-start" type="date"></div>
+      <div class="field"><label>Reg End Date</label><input id="ct-reg-end" type="date"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Tour Start Date</label><input id="ct-tour-start" type="date"></div>
+      <div class="field"><label>Tour End Date</label><input id="ct-tour-end" type="date"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Entry Fee (₹)</label><input id="ct-fee" type="number" value="0"></div>
+      <div class="field"><label>Prize Pool</label><input id="ct-prize" value="₹25,000 + Trophy"></div>
+    </div>
+    <div class="field"><label>Description</label><textarea id="ct-desc" placeholder="Tournament details..."></textarea></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="createTournament()">Create Tournament</button>
+  </div>
+</div>
+
 <div class="modal-overlay" id="modal-ai-match">
   <div class="modal-box" style="max-width:560px;">
     <div class="modal-head"><h3>🤖 AI Player Match</h3><button class="modal-close" onclick="closeModal('modal-ai-match')">✕</button></div>
@@ -595,8 +800,11 @@
   </div>
 </div>
 
+
+
 <div id="toast-wrap"></div>
 
+<script src="api.js"></script>
 <script src="AthleTEX.js"></script>
 </body>
 </html>
